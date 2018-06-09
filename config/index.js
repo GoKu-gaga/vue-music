@@ -32,6 +32,17 @@ module.exports = {
           referer: 'https://c.y.qq.com/',
           host: 'c.y.qq.com'
         }
+      },
+      '/songList': {
+        target: 'https://c.y.qq.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/songList' : '/qzone/fcg-bin/fcg_ucc_getcdinfo_byids_cp.fcg'
+        },
+        headers: {
+          referer: 'https://c.y.qq.com/',
+          host: 'c.y.qq.com'
+        }
       }
     },
 
