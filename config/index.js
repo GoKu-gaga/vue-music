@@ -11,11 +11,22 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/getDiscList": {
-        target: "https://c.y.qq.com",
+      '/getDiscList': {
+        target: 'https://c.y.qq.com',
         changeOrigin: true,
         pathRewrite: {
           '^/getDiscList' : '/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
+        },
+        headers: {
+          referer: 'https://c.y.qq.com/',
+          host: 'c.y.qq.com'
+        }
+      },
+      '/lyric': {
+        target: 'https://c.y.qq.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/lyric' : '/lyric/fcgi-bin/fcg_query_lyric_new.fcg'
         },
         headers: {
           referer: 'https://c.y.qq.com/',
