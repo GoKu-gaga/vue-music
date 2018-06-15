@@ -11,11 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/getDiscList': {
+      '/api/getDiscList': {
         target: 'https://c.y.qq.com',
         changeOrigin: true,
         pathRewrite: {
-          '^/getDiscList' : '/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
+          '^/api/getDiscList' : '/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
         },
         headers: {
           referer: 'https://c.y.qq.com/',
@@ -78,6 +78,7 @@ module.exports = {
   },
 
   build: {
+    port: 9000,
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 
